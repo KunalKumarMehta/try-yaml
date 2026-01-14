@@ -1,0 +1,15 @@
+# Tool-Enabled Agent Workflow
+# This example demonstrates an agent with access to the Python tool
+# for data analysis and computation.
+
+agents:
+  - id: analyst
+    role: Data Analyst
+    goal: Analyze the provided dataset trends and generate statistical insights
+    tools:
+      - python
+
+workflow:
+  type: sequential
+  steps:
+    - agent: analyst

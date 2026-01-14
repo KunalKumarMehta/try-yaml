@@ -1,0 +1,18 @@
+# Sequential Research Workflow
+# This example demonstrates a sequential workflow where a researcher gathers
+# information and a writer creates a summary based on that research.
+
+agents:
+  - id: researcher
+    role: Research Assistant
+    goal: Find key insights about electric vehicles, including market trends, technology advances, and environmental impact
+
+  - id: writer
+    role: Content Writer
+    goal: Write a concise, engaging summary using the research findings
+
+workflow:
+  type: sequential
+  steps:
+    - agent: researcher
+    - agent: writer

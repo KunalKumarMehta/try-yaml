@@ -1,0 +1,24 @@
+# Parallel Review Workflow
+# This example demonstrates parallel execution where two engineers work
+# independently, and a tech lead reviews and consolidates their proposals.
+
+agents:
+  - id: backend
+    role: Backend Engineer
+    goal: Propose an API design for a task management system with CRUD operations, authentication, and data validation
+
+  - id: frontend
+    role: Frontend Engineer
+    goal: Propose a UI layout for a task management system with dashboard, task list, and task detail views
+
+  - id: reviewer
+    role: Tech Lead
+    goal: Review and consolidate the backend API and frontend UI proposals, identifying synergies and potential issues
+
+workflow:
+  type: parallel
+  branches:
+    - backend
+    - frontend
+  then:
+    agent: reviewer
